@@ -1,0 +1,136 @@
+/* game board table */
+
+
+/* // */
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ /* left:50%; */
+ /* /// */
+ display: block;
+ align-items: center;
+ background-color: silver;
+
+
+}
+/* // */
+
+
+/* game board table */
+#board {
+  margin:0 auto;
+}
+
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+  
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.piece.p1 {
+  background-color: red;
+}
+
+.piece.p2 {
+  background-color: blue;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+
+
+
+
+
+#startGame {
+  position: relative;
+  /* top: 50%; */
+  padding:10px;
+  width:100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+ /* left:50%; */
+ /* /// */
+ /* display: block; */
+border: 0;
+background-color: white;
+ align-items: center;
+ transition: all 1000ms;
+
+}
+#startGame:hover {
+  border: 0;
+background-color: silver;
+}
+
+
+
+
+#players {
+  width:500px;
+  /* display: block; */
+}
+
+#p1div {
+  width:50%;
+}
+
+#p2div {
+  width:50%;
+}
+
+
+#playerForm {
+  display: block;
+  
+}
+
+#playerTable {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+#gradientBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+  background: radial-gradient(ellipse closest-side at center,white,silver);
+}
+
+#gradientBackground2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -9;
+  
+}
