@@ -212,18 +212,21 @@ let p1ColorField = document.getElementById('p1color');
 let p2ColorPicker = document.getElementById('p2color-picker');
 let p2ColorField = document.getElementById('p2color');
 
+//Picker P1
 p1ColorPicker.addEventListener('input', (event) => {
   p1ColorField.value = event.target.value;
 });
 
+//Field P1
 p1ColorField.addEventListener('input', (event) => {
   p1ColorPicker.value = event.target.value;
 });
 
+//Picker P2
 p2ColorPicker.addEventListener('input', (event) => {
   p2ColorField.value = event.target.value;
 });
-
+//Field p2
 p2ColorField.addEventListener('input', (event) => {
   p2ColorPicker.value = event.target.value;
 });
