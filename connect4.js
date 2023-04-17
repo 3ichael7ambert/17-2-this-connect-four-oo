@@ -119,7 +119,7 @@ class Game {
     // check for win
     if (this.checkForWin()) {
       this.gameOver = true;
-      return this.endGame(`The ${this.currPlayer.color} player won!`);
+      return this.endGame(`${this.currPlayer.name} player won!`);
     }
 
     // switch players
@@ -162,8 +162,9 @@ class Game {
 }
 
 class Player {
-  constructor(color) {
+  constructor(color,name) {
     this.color = color;
+    this.name = name;
   }
 }
 
@@ -171,8 +172,8 @@ document.getElementById('startGame').addEventListener('click', (event) => {
   event.preventDefault();
 
   //establish players
-  let p1 = new Player(document.getElementById('p1color').value);
-  let p2 = new Player(document.getElementById('p2color').value);
+  let p1 = new Player(document.getElementById('p1color').value,document.getElementById('p1name').value);
+  let p2 = new Player(document.getElementById('p2color').value,document.getElementById('p2name').value);
 
 
   //color variables
