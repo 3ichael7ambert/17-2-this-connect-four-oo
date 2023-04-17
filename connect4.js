@@ -168,43 +168,41 @@ class Player {
   }
 }
 
-document.getElementById('startGame').addEventListener('click', (event) => {
+
+
+
+const startButton = document.getElementById('startGame');
+
+
+startButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  //establish players
-  let p1 = new Player(document.getElementById('p1color').value,document.getElementById('p1name').value);
-  let p2 = new Player(document.getElementById('p2color').value,document.getElementById('p2name').value);
+  // Get player colors and names from form fields
+  const p1Color = document.getElementById('p1color').value;
+  const p1Name = document.getElementById('p1name').value;
+  const p2Color = document.getElementById('p2color').value;
+  const p2Name = document.getElementById('p2name').value;
 
+  // Create player objects
+  const p1 = new Player(p1Color, p1Name);
+  const p2 = new Player(p2Color, p2Name);
 
-  //color variables
-  let p1color = document.getElementById('p1color').value;
-  let p2color = document.getElementById('p2color').value;
+  // Set player div styles
+  const p1Div = document.getElementById('p1div');
+  const p2Div = document.getElementById('p2div');
+  p1Div.innerText = p1Name;
+  p1Div.style.backgroundColor = p1Color;
+  p2Div.innerText = p2Name;
+  p2Div.style.backgroundColor = p2Color;
 
+  // Start new game with players
+  const game = new Game(p1, p2);
 
-//name variables
-  let p1name = document.getElementById('p1name').value;
-  let p2name = document.getElementById('p2name').value;
-//div variables
-  let p1Div = document.getElementById('p1div');
-  let p2Div = document.getElementById('p2div');
+    // Change text of button to "Restart Game"
+    startButton.innerText = "Restart Game";
 
-
-  //Add Names
-  p1Div.innerText = p1name;
-  p1Div.style.backgroundColor = p1color;
-  p2Div.innerText = p2name;
-  p2Div.style.backgroundColor = p2color;
-
-// //gradient overlay
-//   let gradientBg =document.getElementById('gradientBackground2');
-//   let gradient = `linear-gradient(to right, ${p1color} 0%, transparent 50%, ${p2color} 100%)`;
-//   gradientBg.style.backgroundColor = gradient;
-
-
-
-
-  new Game(p1, p2);
 });
+
 
 
 
